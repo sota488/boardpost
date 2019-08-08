@@ -1,0 +1,5 @@
+<h1> 「<%= @theme.title %>」のスレッド</h1>
+
+<%= link_to 'スレッド一覧に戻る', themes_path %>
+<%= link_to 'このスレッドを編集する', edit_theme_path(@theme) %>
+<%= link_to 'このスレッドを削除する', @theme, method: :delete %> 

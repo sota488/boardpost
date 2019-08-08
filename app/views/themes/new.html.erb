@@ -1,0 +1,7 @@
+<h1>スレッド作成</h1>
+<%= form_for(@theme) do |f| %>
+<%= f.label :title, 'スレッド名'  %>
+<%= f.text_field :title %>
+<%= f.submit '作成' %>
+<% end %>
+<%= link_to 'スレッド一覧に戻る',themes_path %>

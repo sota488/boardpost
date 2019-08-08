@@ -1,0 +1,9 @@
+<h1>スレッド一覧</h1>
+
+<ul>
+  <% @themes.each do |theme| %>
+  <li><%= link_to theme.title, theme %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'スレッドの作成', new_theme_path %>

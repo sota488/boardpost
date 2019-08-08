@@ -1,0 +1,8 @@
+<h1> 「<%= @theme.title %>」のスレッドの編集</h1>
+
+<%= form_for(@theme) do |f| %>
+<%= f.label :title, 'スレッド名'  %>
+<%= f.text_field :title %>
+<%= f.submit '編集' %>
+<% end %>
+<%= link_to 'スレッド一覧に戻る',themes_path %>
