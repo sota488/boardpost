@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190807105017) do
+ActiveRecord::Schema.define(version: 20190808031052) do
+
+  create_table "posts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.text     "body",       limit: 65535
+    t.integer  "theme_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["theme_id"], name: "index_posts_on_theme_id", using: :btree
+  end
 
   create_table "themes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -18,4 +27,5 @@ ActiveRecord::Schema.define(version: 20190807105017) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "posts", "themes"
 end

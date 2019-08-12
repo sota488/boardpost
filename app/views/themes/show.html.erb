@@ -1,5 +1,23 @@
 <h1> 「<%= @theme.title %>」のスレッド</h1>
 
+<h2>コメント一覧</h2>
+
+<% @posts.each do |p| %>
+  <div>
+     <%= p.name %>:<%= p.body %>
+    <hr>
+  </div>
+<% end %>
+
+<%= form_for ([@theme, @post]) do |f| %>
+  <%= f.label :name, '名前' %>
+  <%= f.text_field :name %>
+  <%= f.label :body, 'コメント' %>
+  <%= f.text_field :body %>
+  <%= f.submit '投稿する' %>
+<% end %>
+
+
 <%= link_to 'スレッド一覧に戻る', themes_path %>
 <%= link_to 'このスレッドを編集する', edit_theme_path(@theme) %>
 <%= link_to 'このスレッドを削除する', @theme, method: :delete %> 

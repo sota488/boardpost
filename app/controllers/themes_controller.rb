@@ -5,6 +5,8 @@ class ThemesController < ApplicationController
 
   def show
     @theme = Theme.find(params[:id])
+    @posts = @theme.posts
+    @post = Post.new
   end
 
   def new
@@ -18,6 +20,7 @@ class ThemesController < ApplicationController
       flash[:success] = 'スレッドが作成されました'
       redirect_to @theme
     else
+      binding.pry
       flash.now[:danger] = 'スレッドが作成されませんでした'
       render :new
     end
