@@ -20,7 +20,6 @@ class ThemesController < ApplicationController
       flash[:success] = 'スレッドが作成されました'
       redirect_to @theme
     else
-      binding.pry
       flash.now[:danger] = 'スレッドが作成されませんでした'
       render :new
     end

@@ -1,0 +1,5 @@
+<h1> <%= @post.name %> : <%= @post.body %></h1>
+
+
+<%= link_to 'スレッド一覧に戻る', themes_path %>
+<%= link_to 'このコメントを削除する', theme_post_path, method: :delete %> 
